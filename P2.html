@@ -1,25 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-    
+
+    <form class="ml-3 mr-3 mt-3">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+        </div>
+        <p id="error1"></p>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputStreet">Street</label>
+                <input type="text" class="form-control" id="inputStreet">
+            </div>
+        </div>
+        <p id="error2"></p>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputNumber">Number</label>
+                <input type="text" class="form-control" id="inputNumber">
+            </div>
+        </div>
+
+        <p id="error3"></p>
+
+        <button type="button" class="btn btn-secondary" onclick="validation()">save</button>
+
+        <nav class="mt-3">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </form>
+
+
+    <script>
+        function validation() {
+            var x, y, z, vCity, vStreet, vNumber;
+            x = document.getElementById("inputCity").value;
+            y = document.getElementById("inputStreet").value;
+            z = document.getElementById("inputNumber").value;
+
+            if (!x) {
+                vCity = "city is required";
+            }
+            else {
+                vCity = "Input OK"
+            }
+
+            if (!y) {
+                vStreet = "street is required"
+            }
+            else {
+                vStreet = "Input OK"
+            }
+
+            if (!z || z == 0 || z < 0) {
+                vNumber = "invalid input"
+            }
+            else {
+                vNumber = "Input is OK"
+            }
+
+            document.getElementById("error1").innerHTML = vCity;
+            document.getElementById("error2").innerHTML = vStreet;
+            document.getElementById("error3").innerHTML = vNumber;
 
 
 
-
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
