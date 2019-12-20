@@ -25,7 +25,7 @@
                 <p id="Error1"></p>
                 <div class="form-group">
 
-                    <label >Hobbies</label>
+                    <label>Hobbies</label>
                     <select className="form-control" id="Hobbies">
                         <option value="">Select Hobbies</option>
                         <option value="Chess">Chess</option>
@@ -47,19 +47,27 @@
 
     </form>
 
-<script>
+    <script>
 
-    function save() {
-        var Name = document.querySelector('#Image');
-        console.log(Name.value);
-        if(!Name.value)
-        document.getElementById("Error1").innerHTML='error name is requerd'
-        var select = document.querySelector('#Hobbies');
-        console.log(select.value);
-        if(!select.value)
-        document.getElementById("Error2").innerHTML='error Select is requerd'
-    }
-</script>
+        function save() {
+            var Name = document.querySelector('#Image');
+            var flag = true;
+            console.log(Name.value);
+            if (!Name.value) {
+                document.getElementById("Error1").innerHTML = 'error name is requerd'
+                flag = !flag;
+            }
+            var select = document.querySelector('#Hobbies');
+            console.log(select.value);
+            if (!select.value) {
+                document.getElementById("Error2").innerHTML = 'error Select is requerd'
+                flag = !flag;
+            }
+            if(flag)
+            console.log(select.value,Name.value);
+
+        }
+    </script>
 
 
 
