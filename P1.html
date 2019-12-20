@@ -43,7 +43,23 @@
                         <p id="error3"> </p>
         
         
-                <button type="button" class="btn btn-primary" onclick="validate()">next</button>
+                <button type="button" class="btn btn-primary" onclick="validate()">Save</button>
+                
+                <div class="row">
+               <div className="col-1"></div>
+                <div class="col-11">
+               
+                  
+    
+                    <div class="row">
+                    <div class="col-1"></div> 
+                    <div class="col-11">
+                    <div class="form-group">
+                    <button type="button" class="btn btn-secondary btn-block mt-4"><a href="p2.html">Next</a></button>
+                     </div>
+                   </div>
+                   </div>
+                
               </form>
         
         </div>
@@ -59,15 +75,19 @@
             const username=document.getElementById("username");
             const email=document.getElementById("email");
             const date=document.getElementById("date");
-            if (!username.value)
+    
+            if (!username.value )
                 document.getElementById("error1").innerHTML="username is required";
                 if (!email.value)
                 document.getElementById("error2").innerHTML="mail is required ";
                 if (!date.value)
                 document.getElementById("error3").innerHTML="date is required ";
-                location.href="P3.html";
         }
+        localStorage.setItem("username",username.value);
+        localStorage.setItem("email",email.value);
+        localStorage.setItem("date",date.value);
         </script>
+
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
