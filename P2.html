@@ -35,13 +35,12 @@
 
         <p id="error3"></p>
 
-        <button type="button" class="btn btn-secondary" onclick="validation()">save</button>
+        <button type="button" class="btn btn-secondary" onclick="validation()">Next</button>
 
         <nav class="mt-3">
             <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="P1.html">Previous</a></li>
 
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
             </ul>
         </nav>
     </form>
@@ -49,37 +48,49 @@
 
     <script>
         function validation() {
-            var x, y, z, vCity, vStreet, vNumber;
+            var x, y, z, vCity, vStreet, vNumber, flag = 1;
             x = document.getElementById("inputCity").value;
             y = document.getElementById("inputStreet").value;
             z = document.getElementById("inputNumber").value;
 
             if (!x) {
                 vCity = "city is required";
+                flag = null;
             }
             else {
                 vCity = "Input OK"
+
             }
 
             if (!y) {
                 vStreet = "street is required"
+                flag = null;
+
             }
             else {
                 vStreet = "Input OK"
+
             }
 
             if (!z || z == 0 || z < 0) {
                 vNumber = "invalid input"
+                flag = null;
+
             }
             else {
                 vNumber = "Input is OK"
-            }
 
+            }
             document.getElementById("error1").innerHTML = vCity;
             document.getElementById("error2").innerHTML = vStreet;
             document.getElementById("error3").innerHTML = vNumber;
 
+            if (flag==true)
+                window.location.href ="P3.html";
 
+            localStorage.setItem('city', x);
+            localStorage.setItem('Street', y);
+            localStorage.setItem('Number', z);
 
         }
     </script>
