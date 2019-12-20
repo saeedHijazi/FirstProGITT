@@ -8,9 +8,10 @@
 </head>
 
 <body>
-
+    
     <form class="ml-3 mr-3 mt-3">
         <div class="form-row">
+
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
                 <input type="text" class="form-control" id="inputCity">
@@ -39,8 +40,8 @@
 
 
         <div class="mt-4 col-6">
-            <a href="P3.html"> <button type="button" class="btn btn-secondary"> Next </button> </a>
-            <a href="P1.html"> <button type="button" class="btn btn-secondary"> Perv </button> </a>
+            <a href="P1.html"> <button type="button" class="btn btn-primary"> Perv </button> </a>
+            <a href="P3.html"> <button type="button" class="btn btn-primary"> Next </button> </a>
         </div>
 
     </form>
@@ -78,6 +79,10 @@
             document.getElementById("error2").innerHTML = vStreet;
             document.getElementById("error3").innerHTML = vNumber;
 
+
+            localStorage.setItem('city', x);
+            localStorage.setItem('Street', y);
+            localStorage.setItem('Number', z);
 
 
         }
